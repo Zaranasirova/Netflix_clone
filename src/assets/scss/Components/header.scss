@@ -11,32 +11,33 @@
       display: flex;
       gap: 50px;
       align-items: center;
-    }
-    .netflix-logo {
-      width: auto;
-      height: auto;
-      a {
-        display: block;
-        img {
-          width: 90px;
-          max-height: 90px;
-          object-fit: cover;
+      .netflix-logo {
+        width: auto;
+        height: auto;
+        a {
+          display: block;
+          img {
+            width: 90px;
+            max-height: 90px;
+            object-fit: cover;
+          }
+        }
+      }
+      .nav-bar {
+        .nav-list{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          .nav-list-item{
+              cursor: pointer;
+             a{
+              color: #e5e5e5;
+             }
+          }
         }
       }
     }
-    .nav-bar {
-      .nav-list{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        .nav-list-item{
-            cursor: pointer;
-           a{
-            color: #e5e5e5;
-           }
-        }
-      }
-    }
+    
   }
 }
