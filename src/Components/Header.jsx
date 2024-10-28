@@ -8,9 +8,10 @@ import dropdown from "../assets/icons/caret_icon.svg";
 
 const Header = () => {
     return (
-        <header>
+        <header className='header'>
             <div className="container">
-                <div className="left-side">
+                <div className="header-section row">
+                <div className="left-side ">
                     <div className='netflix-logo'>
                         <Link><img src={logo} alt="netflix-logo" /></Link>
                     </div>
@@ -43,6 +44,8 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+                </div>
+              
             </div>
         </header>
     )

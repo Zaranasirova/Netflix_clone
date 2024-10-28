@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  .header-section {
+    .left-side {
+      display: flex;
+      gap: 50px;
+    }
+    .netflix-logo {
+      width: auto;
+      height: auto;
+      a {
+        display: block;
+        img {
+            width: 90px;
+            max-height: 90px;
+            object-fit: cover;
+        }
+      }
+    }
+  }
+}
