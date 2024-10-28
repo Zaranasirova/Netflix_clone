@@ -13,33 +13,32 @@ const Header = () => {
                 <div className="header-section row">
                 <div className="left-side ">
                     <div className='netflix-logo'>
-                        <Link><img src={logo} alt="netflix-logo" /></Link>
+                        <Link to={"/"}><img src={logo} alt="netflix-logo" /></Link>
                     </div>
                     <nav className='nav-bar'>
                         <ul className='nav-list'>
-                            <li className='nav-list-item'><Link>Home</Link></li>
-                            <li className='nav-list-item'><Link>TV Shows</Link></li>
-                            <li className='nav-list-item'><Link>Movies</Link></li>
-                            <li className='nav-list-item'><Link>New & Popular</Link></li>
-                            <li className='nav-list-item'><Link>My List</Link></li>
-                            <li className='nav-list-item'><Link>Browse by Languages</Link></li>
-
+                            <li className='nav-list-item'><Link to={"/"}>Home</Link></li>
+                            <li className='nav-list-item'><Link to={"/"}>TV Shows</Link></li>
+                            <li className='nav-list-item'><Link to={"/"}>Movies</Link></li>
+                            <li className='nav-list-item'><Link to={"/"}>New & Popular</Link></li>
+                            <li className='nav-list-item'><Link to={"/"}>My List</Link></li>
+                            <li className='nav-list-item'><Link to={"/"}>Browse by Languages</Link></li>
                         </ul>
                     </nav>
                 </div>
                 <div className="right-side">
                     <div className="user-area">
                         <div className="search">
-                            <Link><img src={search} alt="search-icon-svg" className='icon' /></Link>
+                           <img src={search} alt="search-icon-svg" className='icon' />
                         </div>
                         <div className='children'>
                             <Link>Children</Link>
                         </div>
                         <div className="bell">
-                            <Link><img src={bell} alt="bell-icon-svg" className='icon' /></Link>
+                           <img src={bell} alt="bell-icon-svg" className='icon' />
                         </div>
                         <div className="navBar-profile">
-                            <Link><img src={profile} alt="Profile-image" className='profile' /></Link>
+                            <img src={profile} alt="Profile-image" className='profile' />
                             <img src={dropdown} alt="dropdown-icon" />
                             <div className="dropdown-content">
                                 <p>Sign Out of Netflix</p>
@@ -48,7 +47,6 @@ const Header = () => {
                     </div>
                 </div>
                 </div>
-              
             </div>
         </header>
     )

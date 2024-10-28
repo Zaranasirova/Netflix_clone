@@ -1,0 +1,27 @@
+.hero-section {
+  .hero {
+    position: relative;
+    .banner-image {
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, black 75%);
+      -weblit-mask-image: linear-gradient(to right, transparent, black 75%);
+    }
+    .container {
+      .hero-caption {
+        position: absolute;
+        bottom: 0;
+
+        .caption-img{
+            width: 90%;
+            max-width: 420px;
+            margin-bottom: 30px;
+        }
+        p{
+            max-width: 700px;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
