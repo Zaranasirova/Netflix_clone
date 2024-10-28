@@ -1,6 +1,7 @@
 .header {
   position: fixed;
   left: 0;
+  top: 20px;
   width: 100%;
   color: #e5e5e5;
   background-image: linear-gradient(180deg,rgba(0,0,0,0.7) 10%, transparent);
@@ -38,6 +39,30 @@
         }
       }
     }
-    
+    .right-side{
+        .user-area{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            .navBar-profile{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                .profile{
+                    border-radius: 4px;
+                    width: 35px;
+                }
+            }
+            .icon{
+                width: 20px;
+                cursor: pointer;
+            }
+            
+            
+        }
+       
+    }
   }
 }

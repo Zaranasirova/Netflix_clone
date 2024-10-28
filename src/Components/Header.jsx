@@ -30,16 +30,16 @@ const Header = () => {
                 <div className="right-side">
                     <div className="user-area">
                         <div className="search">
-                            <Link><img src={search} alt="search-icon-svg" /></Link>
+                            <Link><img src={search} alt="search-icon-svg" className='icon' /></Link>
                         </div>
                         <div className='children'>
                             <Link>Children</Link>
                         </div>
                         <div className="bell">
-                            <Link><img src={bell} alt="bell-icon-svg" /></Link>
+                            <Link><img src={bell} alt="bell-icon-svg" className='icon' /></Link>
                         </div>
                         <div className="navBar-profile">
-                            <Link><img src={profile} alt="Profile-image" /></Link>
+                            <Link><img src={profile} alt="Profile-image" className='profile' /></Link>
                             <img src={dropdown} alt="dropdown-icon" />
                         </div>
                     </div>
