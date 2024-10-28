@@ -17,12 +17,12 @@ const Header = () => {
                     </div>
                     <nav className='nav-bar'>
                         <ul className='nav-list'>
-                            <li className='nav-lit-item'><Link>Home</Link></li>
-                            <li className='nav-lit-item'><Link>TV Shows</Link></li>
-                            <li className='nav-lit-item'><Link>Movies</Link></li>
-                            <li className='nav-lit-item'><Link>New & Popular</Link></li>
-                            <li className='nav-lit-item'><Link>My List</Link></li>
-                            <li className='nav-lit-item'><Link>Browse by Languages</Link></li>
+                            <li className='nav-list-item'><Link>Home</Link></li>
+                            <li className='nav-list-item'><Link>TV Shows</Link></li>
+                            <li className='nav-list-item'><Link>Movies</Link></li>
+                            <li className='nav-list-item'><Link>New & Popular</Link></li>
+                            <li className='nav-list-item'><Link>My List</Link></li>
+                            <li className='nav-list-item'><Link>Browse by Languages</Link></li>
 
                         </ul>
                     </nav>
