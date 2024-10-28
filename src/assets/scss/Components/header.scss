@@ -50,16 +50,36 @@
                 align-items: center;
                 gap: 10px;
                 cursor: pointer;
+                position: relative;
                 .profile{
                     border-radius: 4px;
                     width: 35px;
+                }
+                .dropdown-content{
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    width: max-content;
+                    background-color: #191919;
+                    padding: 18px 22px;
+                    border-radius: 2px;
+                    text-decoration: underline;
+                    z-index: 1;
+                    display: none;
+                    p{
+                        font-size: 13px;
+                        cursor: pointer;
+                    }
+                }
+                &:hover .dropdown-content {
+                    display: block; 
+                    transition: all 0.3s;
                 }
             }
             .icon{
                 width: 20px;
                 cursor: pointer;
             }
-            
             
         }
        

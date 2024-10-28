@@ -41,6 +41,9 @@ const Header = () => {
                         <div className="navBar-profile">
                             <Link><img src={profile} alt="Profile-image" className='profile' /></Link>
                             <img src={dropdown} alt="dropdown-icon" />
+                            <div className="dropdown-content">
+                                <p>Sign Out of Netflix</p>
+                            </div>
                         </div>
                     </div>
                 </div>
