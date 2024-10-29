@@ -209,16 +209,45 @@
           width: 90%;
           max-width: 420px;
           margin-bottom: 30px;
+          @media (max-width: 1100px) {
+            width: 40%;
+          }
+          @media (max-width: 750px) {
+            margin-bottom: 20px;
+          }
+          @media (max-width: 530px) {
+            margin-bottom:5px;
+            width: 30%;
+          }
         }
         p {
           max-width: 700px;
           font-size: 17px;
           margin-bottom: 20px;
+          @media (max-width: 1100px) {
+            margin-bottom: 10px;
+          }
+          @media (max-width: 750px) {
+            font-size: 13px;
+          }
+          @media (max-width: 530px) {
+            font-size: 10px;
+            max-width: 500px;
+          }
         }
         .hero-btns {
           display: flex;
           gap: 10px;
           margin-bottom: 50px;
+          @media (max-width: 1100px) {
+            margin-bottom: 30px;
+          }
+          @media (max-width: 750px) {
+            margin-bottom: 10px;
+          }
+          @media (max-width: 530px) {
+            margin-bottom: 5px;
+          }
           .btn {
             border: 0;
             outline: 0;
@@ -231,11 +260,26 @@
             background-color: #fff;
             border-radius: 4px;
             cursor: pointer;
+            @media (max-width: 750px) {
+              padding: 6px 15px;;
+            }
+            @media (max-width: 530px) {
+              padding: 4px 10px;;
+            }
             &:hover {
               background-color: #ffffffbf;
             }
             img {
               width: 25px;
+              @media (max-width: 750px) {
+                width: 20px;
+              }
+              @media (max-width: 530px) {
+                width: 15px;
+              }
+              @media (max-width: 530px) {
+                width: 10px;
+              }
             }
           }
           .dark-btn {

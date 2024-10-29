@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import card_data from "../assets/image/cards/Cards_data";
 
-const Cards = () => {
+const Cards = ({ title, category }) => {
     const cardsRef = useRef();
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
-    
+
     const handleMouseDown = (e) => {
         setIsDragging(true);
         setStartX(e.pageX - cardsRef.current.offsetLeft);
@@ -20,19 +20,19 @@ const Cards = () => {
     const handleMouseUp = () => {
         setIsDragging(false);
     };
-    
+
 
     const handleMouseMove = (e) => {
         if (!isDragging) return;
         e.preventDefault();
         const x = e.pageX - cardsRef.current.offsetLeft;
-        const walk = (x - startX); 
-        cardsRef.current.scrollLeft = scrollLeft - walk; 
+        const walk = (x - startX);
+        cardsRef.current.scrollLeft = scrollLeft - walk;
     };
 
     return (
         <div className="title-cards">
-            <h2>Popular on Netflix</h2>
+            <h2> {title ? title : "Popular on Netflix"}</h2>
             <div
                 className="card-wrapper"
                 ref={cardsRef}
