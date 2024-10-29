@@ -1,16 +1,210 @@
+// // .hero-section {
+// //   .hero {
+// //     .banner-image {
+// //       width: 100%;
+// //       mask-image: linear-gradient(to right, transparent, black 75%);
+// //       -weblit-mask-image: linear-gradient(to right, transparent, black 75%);
+// //     }
+// //     .container {
+// //       position: relative;
+// //       .hero-caption {
+// //         position: absolute;
+// //         bottom: 0;
+// //         width: 100%;
+// //         .caption-img {
+// //           width: 90%;
+// //           max-width: 420px;
+// //           margin-bottom: 30px;
+// //         }
+// //         p {
+// //           max-width: 700px;
+// //           font-size: 17px;
+// //           margin-bottom: 20px;
+// //         }
+// //         .hero-btns {
+// //           display: flex;
+// //           gap: 10px;
+// //           margin-bottom: 50px;
+// //           .btn {
+// //             border: 0;
+// //             outline: 0;
+// //             padding: 8px 20px;
+// //             display: inline-flex;
+// //             align-items: center;
+// //             gap: 10px;
+// //             font-size: 15px;
+// //             font-weight: 600;
+// //             background-color: #fff;
+// //             border-radius: 4px;
+// //             cursor: pointer;
+// //             &:hover {
+// //               background-color: #ffffffbf;
+// //             }
+// //             img {
+// //               width: 25px;
+// //             }
+// //           }
+// //           .dark-btn {
+// //             color: #fff;
+// //             background-color: #6d6d6eb3;
+// //             &:hover {
+// //               background-color: #6d6d6e66;
+// //             }
+// //           }
+// //         }
+// //       }
+// //     }
+// //   }
+// // }
+
+// // .hero-section {
+// //   .hero {
+// //     width: 100%;
+// //     height: 100vh;
+// //     background-size: cover;
+// //     background-image: url(../../../image/hero_banner.jpg);
+// //     position: relative;
+// //     .hero-caption {
+// //       position: absolute;
+// //       bottom: 20px;
+// //       left: 0;
+// //       right: 0;
+// //       width: 92%;
+// //       margin: 0 auto;
+// //       .caption-img {
+// //         width: 90%;
+// //         max-width: 420px;
+// //         margin-bottom: 30px;
+// //       }
+// //       p {
+// //         max-width: 700px;
+// //         font-size: 17px;
+// //         margin-bottom: 20px;
+// //       }
+// //       .hero-btns {
+// //         display: flex;
+// //         gap: 10px;
+// //         margin-bottom: 50px;
+// //         .btn {
+// //           border: 0;
+// //           outline: 0;
+// //           padding: 8px 20px;
+// //           display: inline-flex;
+// //           align-items: center;
+// //           gap: 10px;
+// //           font-size: 15px;
+// //           font-weight: 600;
+// //           background-color: #fff;
+// //           border-radius: 4px;
+// //           cursor: pointer;
+// //           &:hover {
+// //             background-color: #ffffffbf;
+// //           }
+// //           img {
+// //             width: 25px;
+// //           }
+// //         }
+// //         .dark-btn {
+// //           color: #fff;
+// //           background-color: #6d6d6eb3;
+// //           &:hover {
+// //             background-color: #6d6d6e66;
+// //           }
+// //         }
+// //       }
+// //     }
+// //   }
+// // }
+
+// .hero-section {
+//   .hero {
+//     width: 100%;
+//     height: 100vh;
+//     position: relative;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       mask-image: linear-gradient(to right, transparent, black 75%);
+//     -weblit-mask-image: linear-gradient(to right, transparent, black 75%);
+//     }
+//     .container {
+//       .hero-caption {
+//         position: absolute;
+//         bottom: 0;
+//         width: 100%;
+//         left: 0;
+//         right: 0;
+//         padding: 0 60px;
+//         z-index: 5;
+//         .caption-img {
+//           width: 90%;
+//           max-width: 420px;
+//           margin-bottom: 30px;
+//         }
+//         p {
+//           max-width: 700px;
+//           font-size: 17px;
+//           margin-bottom: 20px;
+//         }
+//         .hero-btns {
+//           display: flex;
+//           gap: 10px;
+//           margin-bottom: 50px;
+//           .btn {
+//             border: 0;
+//             outline: 0;
+//             padding: 8px 20px;
+//             display: inline-flex;
+//             align-items: center;
+//             gap: 10px;
+//             font-size: 15px;
+//             font-weight: 600;
+//             background-color: #fff;
+//             border-radius: 4px;
+//             cursor: pointer;
+//             &:hover {
+//               background-color: #ffffffbf;
+//             }
+//             img {
+//               width: 25px;
+//             }
+//           }
+//           .dark-btn {
+//             color: #fff;
+//             background-color: #6d6d6eb3;
+//             &:hover {
+//               background-color: #6d6d6e66;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 .hero-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
   .hero {
-    position: relative;
-    .banner-image {
+    width: 100%;
+    height: 100%;
+    img {
       width: 100%;
+      height: 100vh;
       mask-image: linear-gradient(to right, transparent, black 75%);
       -weblit-mask-image: linear-gradient(to right, transparent, black 75%);
     }
+  }
+  .hero-caption {
+    position: absolute;
+    z-index: 21;
+    bottom: 0;
+    width: 100%;
     .container {
-      .hero-caption {
-        position: absolute;
-        bottom: 0;
-
+      .hero-wrapper {
+        width: 100%;
+        height: 100%;
         .caption-img {
           width: 90%;
           max-width: 420px;
@@ -37,8 +231,8 @@
             background-color: #fff;
             border-radius: 4px;
             cursor: pointer;
-            &:hover{
-                background-color: #ffffffbf;
+            &:hover {
+              background-color: #ffffffbf;
             }
             img {
               width: 25px;
@@ -47,8 +241,8 @@
           .dark-btn {
             color: #fff;
             background-color: #6d6d6eb3;
-            &:hover{
-                background-color: #6d6d6e66;
+            &:hover {
+              background-color: #6d6d6e66;
             }
           }
         }
