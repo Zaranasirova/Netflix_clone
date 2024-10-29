@@ -5,26 +5,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+// import required modules
+import { Pagination } from 'swiper/modules';
+import 'swiper/css/pagination';
 
 const Cards = () => {
     return (
         <div className="title-cards">
-            <h2>Popular on Netflix</h2>
-            <div className="card-list">
-                {
-                    card_data.map((item, index) => (
-                        <Swiper className="mySwiper" key={index}>
-                            <SwiperSlide>
-                                <div className="card-image">
-                                    <img src={item.image} alt={item.name} />
-                                </div>
-                                <p>{item.name}</p>
-                            </SwiperSlide>
-                        </Swiper>
-                    ))
-                }
-            </div>
-        </div>
+        <h2>Popular on Netflix</h2>
+        <Swiper
+               slidesPerView={4}
+               centeredSlides={false}
+               spaceBetween={0} // Boşluğu 0 olaraq təyin edin
+               grabCursor={true}
+               pagination={{
+                 clickable: true,
+               }}
+               modules={[Pagination]}
+               className="mySwiper"
+        >
+            {card_data.map((item, index) => (
+                <SwiperSlide key={index}>
+                    <div className="card-image">
+                        <img src={item.image} alt={item.name} />
+                    </div>
+                    <p>{item.name}</p>
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    </div>
     )
 }
 

@@ -21,6 +21,7 @@ const Hero = () => {
                             <button className='btn dark-btn'><img src={info_icon} alt="info-icon" />More İnfo</button>
                         </div>
                     </div>
+                    <Cards/>
                 </div>
             </div>
 
