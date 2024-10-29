@@ -1,48 +1,58 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import card_data from "../assets/image/cards/Cards_data";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-// import required modules
-import { Pagination } from 'swiper/modules';
-import 'swiper/css/pagination';
 
 const Cards = () => {
-    const getSlidesPerView = () => {
-        const width = window.innerWidth;
-        if (width >= 1200) return 6;
-        if (width >= 992) return 5; 
-        if (width >= 768) return 4; 
-        if (width >= 576) return 3; 
-        return 1; 
+    const cardsRef = useRef();
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - cardsRef.current.offsetLeft);
+        setScrollLeft(cardsRef.current.scrollLeft);
     };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+    
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - cardsRef.current.offsetLeft;
+        const walk = (x - startX); 
+        cardsRef.current.scrollLeft = scrollLeft - walk; 
+    };
+
     return (
         <div className="title-cards">
-        <h2>Popular on Netflix</h2>
-        <Swiper
-               slidesPerView={getSlidesPerView()}
-               centeredSlides={false}
-               spaceBetween={110} 
-               grabCursor={true}
-               pagination={{
-                 clickable: true,
-               }}
-               modules={[Pagination]}
-               className="mySwiper"
-        >
-            {card_data.map((item, index) => (
-                <SwiperSlide key={index} className='card-list'>
-                    <div className="card-image">
-                        <img src={item.image} alt={item.name} />
+            <h2>Popular on Netflix</h2>
+            <div
+                className="card-wrapper"
+                ref={cardsRef}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                style={{ overflowX: 'scroll', cursor: isDragging ? 'grabbing' : 'grab', scrollSnapType: 'x mandatory' }}
+            >
+                {card_data.map((item, index) => (
+                    <div className="card-list" key={index}>
+                        <div className="card-image">
+                            <img src={item.image} alt={item.name} />
+                        </div>
+                        <p>{item.name}</p>
                     </div>
-                    <p>{item.name}</p>
-                </SwiperSlide>
-            ))}
-        </Swiper>
-    </div>
-    )
-}
+                ))}
+            </div>
+        </div>
+    );
+};
 
-export default Cards
+export default Cards;
