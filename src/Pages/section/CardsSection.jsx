@@ -1,17 +1,18 @@
-import React from 'react'
-import Cards from '../../Components/Cards'
+import React from 'react';
+import Cards from '../../Components/Cards';
 
 const CardsSection = () => {
-  return (
-    <div className='CardsSection'>
-        <div className="container">
-        <Cards title={"Blockbuster Movies"}/>
-        <Cards title={"Only on Netflix"}/>
-        <Cards title={"Upcoming"}/>
-        <Cards title={"Top Pics for You"}/>
+    const cardTitles = ["Blockbuster Movies", "Only on Netflix", "Upcoming", "Top Picks for You"];
+    
+    return (
+        <div className='CardsSection'>
+            <div className="container">
+                {cardTitles.map((title, index) => (
+                    <Cards key={index} title={title} />
+                ))}
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default CardsSection
+export default CardsSection;
