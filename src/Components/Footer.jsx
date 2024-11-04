@@ -15,23 +15,24 @@ const Footer = () => {
                         <div className="icon"><img src={instagram_icon} alt="instagram_icon" /></div>
                         <div className="icon"><img src={facebook_icon} alt="facebook_icon" /></div>
                     </div>
-                    <nav>
-                        <ul>
-                            <li><Link to={"/"}>Audio Description</Link></li>
-                            <li><Link to={"/"}>Help Centre</Link></li>
-                            <li><Link to={"/"}>Gift Cards</Link></li>
-                            <li><Link to={"/"}>Media Centre</Link></li>
-                            <li><Link to={"/"}>Investor Relations</Link></li>
-                            <li><Link to={"/"}>Jobs</Link></li>
-                            <li><Link to={"/"}>Terms of Use</Link></li>
-                            <li><Link to={"/"}>Privacy</Link></li>
-                            <li><Link to={"/"}>Legal Notices</Link></li>
-                            <li><Link to={"/"}>Cookie Preferences</Link></li>
-                            <li><Link to={"/"}>Corporate Information</Link></li>
-                            <li><Link to={"/"}>Contact Us</Link></li>
+                    <nav className='footer-navbar'>
+                        <ul className='footer-navlist'>
+                            <li className='footer-navlist-item'><Link to={"/"}>Audio Description</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Help Centre</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Gift Cards</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Media Centre</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Investor Relations</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Jobs</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Terms of Use</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Privacy</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Legal Notices</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Cookie Preferences</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Corporate Information</Link></li>
+                            <li className='footer-navlist-item'><Link to={"/"}>Contact Us</Link></li>
                         </ul>
                     </nav>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores debitis nobis minus?</p>
+                    <p className='copywrite-text'>© 1997-2024 Netflix,  Inc.
+                    </p>
                 </div>
             </div>
         </footer>

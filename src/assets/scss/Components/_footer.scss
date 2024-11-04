@@ -1,9 +1,11 @@
 .footer {
+    margin-bottom: 25px;
   .container {
     .footer-wrapper {
-        display: flex;
-        flex-direction: column;
-       padding: 0 100px;
+      display: flex;
+      flex-direction: column;
+      padding: 0 100px;
+    gap: 40px;
       .footer-icons {
         display: flex;
         gap: 20px;
@@ -16,6 +18,26 @@
             cursor: pointer;
           }
         }
+      }
+      .footer-navbar {
+        .footer-navlist {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+          gap: 15px;
+          .footer-navlist-item {
+          
+      
+            a{
+                color: #e5e5e5;
+                font-size: 14px;
+
+            }
+          }
+        }
+      }
+      .copywrite-text{
+        color: gray;
+        font-size: 14px;
       }
     }
   }

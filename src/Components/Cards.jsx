@@ -6,8 +6,17 @@ const Cards = ({ title, category }) => {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
+
+
+        fetch(`https://api.themoviedb.org/3/movie/${category? category :"now_playing"}?language=en-US&page=1`, options)
+            .then(res => res.json())
+            .then(res => setApiData(res.results))
+            .catch(err => console.error(err));
+
+
         const handleMouseMove = (e) => {
             if (!isDragging) return;
             e.preventDefault();
@@ -40,6 +49,14 @@ const Cards = ({ title, category }) => {
         setScrollLeft(cardsRef.current.scrollLeft);
     };
 
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTQ0YmU0YmI5Yzk2OWQ1ZTJjYzg4YmQzYmExMGM2NyIsIm5iZiI6MTczMDcyMTUwMy44MDIxMzk4LCJzdWIiOiI2NzI4OTA2ZTc2MTk3OWYwMDVlMmQyMDMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.kLEYDXwLyqWNfrYMBuleQOewVHSFtYI9GitvQvtmk8Q'
+        }
+    };
+
     return (
         <div className="title-cards">
             <h2>{title || "Popular on Netflix"}</h2>
@@ -53,12 +70,12 @@ const Cards = ({ title, category }) => {
                     scrollSnapType: 'x mandatory'
                 }}
             >
-                {card_data.map((item, index) => (
+                {apiData.map((item, index) => (
                     <div className="card-list" key={index}>
                         <div className="card-image">
-                            <img src={item.image} alt={item.name} />
+                            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.original_title} />
                         </div>
-                        <p>{item.name}</p>
+                        <p>{item.original_title}</p>
                     </div>
                 ))}
             </div>
