@@ -8,14 +8,21 @@ const Cards = ({ title, category }) => {
     const [scrollLeft, setScrollLeft] = useState(0);
     const [apiData, setApiData] = useState([]);
 
+
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTQ0YmU0YmI5Yzk2OWQ1ZTJjYzg4YmQzYmExMGM2NyIsIm5iZiI6MTczMDcyMTUwMy44MDIxMzk4LCJzdWIiOiI2NzI4OTA2ZTc2MTk3OWYwMDVlMmQyMDMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.kLEYDXwLyqWNfrYMBuleQOewVHSFtYI9GitvQvtmk8Q'
+        }
+    };
+
     useEffect(() => {
 
-
-        fetch(`https://api.themoviedb.org/3/movie/${category? category :"now_playing"}?language=en-US&page=1`, options)
+        fetch(`https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?language=en-US&page=1`, options)
             .then(res => res.json())
             .then(res => setApiData(res.results))
             .catch(err => console.error(err));
-
 
         const handleMouseMove = (e) => {
             if (!isDragging) return;
@@ -41,20 +48,12 @@ const Cards = ({ title, category }) => {
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('mouseup', handleMouseUp);
         };
-    }, [isDragging, startX, scrollLeft]);
+    }, [isDragging, startX, scrollLeft, category]);
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
         setStartX(e.pageX - cardsRef.current.offsetLeft);
         setScrollLeft(cardsRef.current.scrollLeft);
-    };
-
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTQ0YmU0YmI5Yzk2OWQ1ZTJjYzg4YmQzYmExMGM2NyIsIm5iZiI6MTczMDcyMTUwMy44MDIxMzk4LCJzdWIiOiI2NzI4OTA2ZTc2MTk3OWYwMDVlMmQyMDMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.kLEYDXwLyqWNfrYMBuleQOewVHSFtYI9GitvQvtmk8Q'
-        }
     };
 
     return (
