@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import card_data from "../assets/image/cards/Cards_data";
+import { Link } from 'react-router-dom';
 
 const Cards = ({ title, category }) => {
     const cardsRef = useRef();
@@ -71,12 +71,12 @@ const Cards = ({ title, category }) => {
                 }}
             >
                 {apiData.map((item, index) => (
-                    <div className="card-list" key={index}>
+                    <Link to={`/player/${item.id}`} className="card-list" key={index}>
                         <div className="card-image">
                             <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.original_title} />
                         </div>
                         <p>{item.original_title}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
